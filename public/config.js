@@ -1,5 +1,3 @@
 console.log('config.js loaded');
-window.OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-console.log('defined next public api key');
-const apiKey = window.env.OPENAI_API_KEY;
+const apiKey = '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';
 console.log(apiKey);
