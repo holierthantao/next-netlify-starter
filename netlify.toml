@@ -10,8 +10,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    target = "experimental-serverless-trace"
 
 [[headers]]
   for = "/*"
