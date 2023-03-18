@@ -1,9 +1,18 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  functions = "functions"
+  base = "/"
 
 [[plugins]]
   package = "netlify-plugin-cypress"
+  
 
-[headers]
-  Access-Control-Allow-Origin = "https://www.httnews.com"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    target = "experimental-serverless-trace"
+
