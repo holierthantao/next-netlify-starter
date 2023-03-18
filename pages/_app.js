@@ -1,7 +1,16 @@
 import '@styles/globals.css'
 
 function Application({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <html>
+      <head>
+        <meta http-equiv="Access-Control-Allow-Origin" content="https://www.httnews.com" />
+      </head>
+      <body>
+        <Component {...pageProps} />
+      </body>
+    </html>
+  )
 }
 
 export default Application
