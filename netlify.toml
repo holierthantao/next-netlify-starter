@@ -6,7 +6,4 @@
   package = "netlify-plugin-cypress"
 
 [headers]
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      Access-Control-Allow-Origin = "https://www.httnews.com"
+  Access-Control-Allow-Origin = "https://www.httnews.com"
