@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="https://www.httnews.com">
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
