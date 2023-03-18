@@ -16,3 +16,7 @@
   [plugins.inputs]
     target = "experimental-serverless-trace"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://www.httnews.com"
