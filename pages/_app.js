@@ -4,7 +4,7 @@ function Application({ Component, pageProps }) {
   return (
     <html>
       <head>
-        <meta http-equiv="Access-Control-Allow-Origin" content="https://www.httnews.com" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="https://www.httnews.com/generator" />
       </head>
       <body>
         <Component {...pageProps} />
