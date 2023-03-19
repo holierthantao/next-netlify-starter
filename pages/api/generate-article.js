@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res)  {
 console.log("Handler function called!"); 
 // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', 'https://www.httnews.com');
