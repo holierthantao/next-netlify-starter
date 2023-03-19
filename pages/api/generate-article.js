@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import cors from 'cors';
 
+console.log("generate-article opened"); 
+
 const corsMiddleware = cors({
   origin: 'https://www.httnews.com'
 });
