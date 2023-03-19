@@ -1,12 +1,15 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import cors from 'cors';
+
+const corsMiddleware = cors({
+  origin: 'https://www.httnews.com'
+});
 
 export default async function handler(req, res)  {
-console.log("Handler function called!"); 
-// Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://www.httnews.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-try {
+  await corsMiddleware(req, res);
+  
+  console.log("Handler function called!"); 
+  try {
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
 
