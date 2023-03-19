@@ -1,2 +1,5 @@
+/*
+Access-Control-Allow-Origin: *
+
 /config.js
   Access-Control-Allow-Origin: https://www.httnews.com
