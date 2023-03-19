@@ -1,3 +1,3 @@
 {
-  "apiKey": "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"
+  "apiKey": "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"
 }
