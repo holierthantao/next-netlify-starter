@@ -5,16 +5,18 @@ console.log("generate-article opened");
 
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
+    console.log("Going through the OPTIONS request");
   // Set the Access-Control-Allow-Origin header to allow requests from httnews.com
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.httnews.com/');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
   res.setHeader('Cache-Control', 'no-cache');
   res.status(200).end();
   return;
 }
+  console.log("Going through the POST or other request");
   // Set the Access-Control-Allow-Origin header to allow requests from httnews.com
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.httnews.com/');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
   res.setHeader('Cache-Control', 'no-cache');
