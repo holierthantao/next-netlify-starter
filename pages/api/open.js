@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
   console.log("Handler function called!"); 
   try {
-    console.log(open_Ai);
+    console.log(openai);
     const api_Key = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
 
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
     openai.apiKey = api_Key;
 
-    const response = await open_Ai.completions.create({
+    const response = await openai.completions.create({
       model: 'text-davinci-003',
       prompt: prompt,
       temperature: 0.5,
