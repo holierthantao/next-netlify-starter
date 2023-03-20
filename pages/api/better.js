@@ -15,7 +15,11 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     // Handle preflight requests
     corsHandler(req, res);
-    res.status(200).end();
+    res.status(200)
+      .header('Access-Control-Allow-Origin', '*')
+      .header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      .header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept')
+      .end();
     return;
   }
    console.log("Handler function called!"); 
