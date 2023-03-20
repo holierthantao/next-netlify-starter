@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 console.log("generate-article opened");
 
 export default async function handler(req, res) {
+  req.setTimeout(60000); // set the timeout to 60 seconds 
   if (req.method === 'OPTIONS') {
     console.log("Going through the OPTIONS request");
   // Set the Access-Control-Allow-Origin header to allow requests from httnews.com
