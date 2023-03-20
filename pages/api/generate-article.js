@@ -1,20 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import microCors from 'micro-cors';
 import fetch from 'node-fetch';
 
-console.log("generate-article opened"); 
-
-const corsOptions = {
-  origin: 'https://www.httnews.com',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-const corsMiddleware = microCors(corsOptions);
+console.log("generate-article opened");
 
 export default async function handler(req, res) {
-  await corsMiddleware(req, res);
-  
+  // Set the Access-Control-Allow-Origin header to allow requests from httnews.com
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.httnews.com');
+
   console.log("Handler function called!"); 
   try {
     const apiKey = process.env.OPENAI_API_KEY;
