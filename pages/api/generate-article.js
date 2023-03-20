@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import cors from 'cors';
+import { default as cors } from 'cors';
 import fetch from 'node-fetch';
 
 console.log("generate-article opened"); 
