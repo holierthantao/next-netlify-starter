@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+
 import fetch from 'node-fetch';
 
 console.log("generate-article opened");
