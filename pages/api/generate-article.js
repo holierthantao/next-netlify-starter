@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
 
-    const prompt = `write a ${articleTypeSelection} newspaper article in full including a headline and a byline, writing in the style of ${authorName}. The article should be about ${subjectMatter}.`;
+    const prompt = `write a ${articleTypeSelection} newspaper article in full including a headline and a byline, writing in the style of ${authorName}. The article should not mention specific dates and be about the following subject matter as the topic and elaborating on it with other known facts and context: ${subjectMatter}.`;
 
     //const prompt = 'say this is a test';
     const headers = {
