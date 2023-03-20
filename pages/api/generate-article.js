@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { default as cors } from 'cors';
+import microCors from 'micro-cors';
 import fetch from 'node-fetch';
 
 console.log("generate-article opened"); 
@@ -10,7 +10,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-const corsMiddleware = cors(corsOptions);
+const corsMiddleware = microCors(corsOptions);
 
 export default async function handler(req, res) {
   await corsMiddleware(req, res);
