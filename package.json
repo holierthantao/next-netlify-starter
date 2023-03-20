@@ -17,6 +17,6 @@
     "node-fetch": "^2.6.2",
     "micro-cors": "^0.1.1",
     "cors": "latest",
-    "@openai/api": "^3.2.1"
+    "openai": "^3.2.1"
   }
 }
