@@ -45,5 +45,5 @@ console.log("generate-article opened");
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
-  };
-};
+  }
+}
