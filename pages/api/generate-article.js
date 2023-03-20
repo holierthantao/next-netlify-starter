@@ -1,4 +1,4 @@
-const next = require('next');
+
 const app = next({ dev: process.env.NODE_ENV !== 'production' });
 app.prepare().then(() => {
   // your API endpoint code goes here
