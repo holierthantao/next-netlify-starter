@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       'Authorization': `Bearer ${apiKey}`
     };
     const data = {
-      'model': 'gpt-3.5-turbo-0301',
+      'model': 'text-davinci-003',
       'prompt': prompt,
       'temperature': 0.2,
       'max_tokens': 1024,
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     };
 
     const responsePromise = new Promise((resolve, reject) => {
-      fetch('https://api.openai.com/v1/chat/completions', {
+      fetch('https://api.openai.com/v1/completions', {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(data),
