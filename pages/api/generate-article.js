@@ -48,4 +48,4 @@ console.log("generate-article opened");
   }
 };
   
-  });
+  };
