@@ -1,12 +1,7 @@
+export default async function handler(req, res) {
+  console.log("generate-article opened");
 
-import { createApiHandler } from 'next-sls';
-
-export default createApiHandler(async (req, res) => {
-
-console.log("generate-article opened"); 
-
-  
-  console.log("Handler function called!"); 
+  console.log("Handler function called!");
   try {
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
@@ -33,7 +28,7 @@ console.log("generate-article opened");
       body: JSON.stringify(data)
     });
     const responseDict = await response.json();
-    
+
     let article = '';
     if (responseDict.choices && responseDict.choices.length > 0) {
       article = responseDict.choices[0].text;
@@ -46,4 +41,4 @@ console.log("generate-article opened");
     console.error(error);
     res.status(500).send('Server error');
   };
-});
+}
