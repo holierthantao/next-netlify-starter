@@ -1,7 +1,20 @@
-export default async function handler(req, res) {
-  console.log("generate-article opened");
+import { NextApiRequest, NextApiResponse } from 'next';
+import cors from 'cors';
 
-  console.log("Handler function called!");
+console.log("generate-article opened"); 
+
+const corsOptions = {
+  origin: 'https://www.httnews.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+const corsMiddleware = cors(corsOptions);
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse)   {
+  await corsMiddleware(req, res);
+  
+  console.log("Handler function called!"); 
   try {
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
@@ -28,7 +41,7 @@ export default async function handler(req, res) {
       body: JSON.stringify(data)
     });
     const responseDict = await response.json();
-
+    
     let article = '';
     if (responseDict.choices && responseDict.choices.length > 0) {
       article = responseDict.choices[0].text;
@@ -40,5 +53,5 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
-  };
+  }
 }
