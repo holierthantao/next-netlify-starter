@@ -1,25 +1,10 @@
 
-const app = next({ dev: process.env.NODE_ENV !== 'production' });
-app.prepare().then(() => {
-  // your API endpoint code goes here
+import { createApiHandler } from 'next-sls';
 
-
-
-
-const cors = require('cors');
+export default createApiHandler(async (req, res) => {
 
 console.log("generate-article opened"); 
 
-const corsOptions = {
-  origin: 'https://www.httnews.com',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}
-
-const corsMiddleware = cors(corsOptions);
-
-module.exports = async (req, res) => {
-  await corsMiddleware(req, res);
   
   console.log("Handler function called!"); 
   try {
