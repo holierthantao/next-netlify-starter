@@ -46,7 +46,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(data),
-      timeout: 5000
+      timeout: 20000
     });
     const responseDict = await response.json();
     
