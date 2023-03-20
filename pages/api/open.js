@@ -22,6 +22,7 @@ export default async function handler(req, res) {
 
   console.log("Handler function called!"); 
   try {
+    console.log(openai);
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
 
