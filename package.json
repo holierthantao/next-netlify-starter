@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "postinstall": "npm install"
+    "export": "next export"
   },
   "dependencies": {
     "cypress": "^10.0.3",
