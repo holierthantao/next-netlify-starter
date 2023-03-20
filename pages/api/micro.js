@@ -3,14 +3,16 @@ import fetch from 'node-fetch';
 import Cors from 'micro-cors';
 
 const cors = Cors({
+  origin: '*',
   allowMethods: ['GET', 'POST', 'OPTIONS'],
-  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
 });
 
 console.log("generate-article opened");
 
 export default cors(async function handler(req, res) {
   if (req.method === 'OPTIONS') {
+    cors(req, res);
     res.status(200).end();
     return;
   }
