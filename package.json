@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "cypress": "^10.0.3",
-    "next": "^12.1.5",
+    "next": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "cors": "^2.8.5"
+    "cors": "latest"
   }
 }
