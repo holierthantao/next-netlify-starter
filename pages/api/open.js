@@ -2,7 +2,7 @@ import openai from 'openai';
 
 console.log("generate-article opened");
 // Define the openai object
-const openai = new openai();
+const open_Ai = new openai();
 
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
@@ -24,15 +24,15 @@ export default async function handler(req, res) {
 
   console.log("Handler function called!"); 
   try {
-    console.log(openai);
+    console.log(open_Ai);
     const apiKey = process.env.OPENAI_API_KEY;
     const { authorName, articleTypeSelection, subjectMatter } = req.body;
 
     const prompt = `write a ${articleTypeSelection} newspaper article in full including a headline and a byline, writing in the style of ${authorName}. The article should be about ${subjectMatter}.`;
 
-    openai.apiKey = apiKey;
+    open_Ai.apiKey = apiKey;
 
-    const response = await openai.completions.create({
+    const response = await open_Ai.completions.create({
       model: 'text-davinci-003',
       prompt: prompt,
       temperature: 0.5,
