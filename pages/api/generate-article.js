@@ -59,7 +59,7 @@ export default async function handler(req, res) {
         }
       }).catch(error => reject(error));
       
-      setTimeout(() => reject(new Error('API request timed out')), 10000);
+      setTimeout(() => reject(new Error('API request timed out')), 20000);
     });
 
     const responseDict = await responsePromise;
