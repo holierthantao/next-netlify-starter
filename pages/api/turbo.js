@@ -64,7 +64,7 @@ const responsePromise = new Promise((resolve, reject) => {
   }).catch(error => reject(error));
   
   setTimeout(() => reject(new Error('API request timed out')), 20000);
-});
+  
 
     });
 
