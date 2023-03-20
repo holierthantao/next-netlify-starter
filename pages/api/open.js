@@ -1,6 +1,8 @@
 import openai from 'openai';
 
 console.log("generate-article opened");
+// Define the openai object
+const openai = new openai();
 
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
