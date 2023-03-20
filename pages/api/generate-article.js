@@ -37,12 +37,12 @@ export default async function handler(req, res) {
     const data = {
       'model': 'text-davinci-003',
       'prompt': prompt,
-      'temperature': 0.5,
+      'temperature': 0.2,
       'max_tokens': 1024,
       'n': 1,
       'stop': null,
       'frequency_penalty': 0.8,
-      'presence_penalty': 0.3
+      'presence_penalty': 0.8
     };
 
     const responsePromise = new Promise((resolve, reject) => {
