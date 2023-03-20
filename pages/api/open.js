@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
     const prompt = `write a ${articleTypeSelection} newspaper article in full including a headline and a byline, writing in the style of ${authorName}. The article should be about ${subjectMatter}.`;
 
-    const response = await openai.completions.create({
+    const response = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: prompt,
       temperature: 0.5,
