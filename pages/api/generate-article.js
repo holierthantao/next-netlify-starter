@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import cors from 'cors';
+import fetch from 'node-fetch';
 
 console.log("generate-article opened"); 
 
@@ -11,7 +12,7 @@ const corsOptions = {
 
 const corsMiddleware = cors(corsOptions);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse)   {
+export default async function handler(req, res) {
   await corsMiddleware(req, res);
   
   console.log("Handler function called!"); 
