@@ -14,7 +14,6 @@
     "react-dom": "^18.0.0",
     "typescript": "^4.5.5",
 "@types/react": "^17.0.38",
-    "cors": "latest",
-  "serverless-nextjs-plugin": "^2.4.1"
+    "cors": "latest"
   }
 }
