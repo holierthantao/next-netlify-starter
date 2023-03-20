@@ -1,3 +1,7 @@
+import cors from 'cors';
+
+console.log("generate-article opened");
+
 const corsHandler = cors({
   origin: (origin, callback) => {
     if (origin === "https://www.httnews.com") {
