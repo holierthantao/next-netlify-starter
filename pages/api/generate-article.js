@@ -47,5 +47,3 @@ console.log("generate-article opened");
     res.status(500).send('Server error');
   }
 };
-  
-  };
