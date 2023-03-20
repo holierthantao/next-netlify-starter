@@ -25,7 +25,10 @@ export default async function handler(req, res) {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
+      'Authorization': `Bearer ${apiKey}`,
+      'Access-Control-Allow-Origin': '*', // add this line to allow all origins
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // add this line to allow these methods
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept' // add this line to allow these headers
     };
     const data = {
       'model': 'text-davinci-003',
