@@ -7,7 +7,7 @@ const corsOptions = {
   origin: 'https://www.httnews.com',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
-}
+};
 
 const corsMiddleware = cors(corsOptions);
 
