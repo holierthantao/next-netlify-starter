@@ -42,13 +42,25 @@ export default async function handler(req, res) {
       'frequency_penalty': 0.8,
       'presence_penalty': 0.3
     };
-    const response = await fetch('https://api.openai.com/v1/completions', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(data),
-      timeout: 20000
+
+    const responsePromise = new Promise((resolve, reject) => {
+      fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(data),
+        timeout: 20000
+      }).then(response => {
+        if (response.ok) {
+          response.json().then(json => resolve(json));
+        } else {
+          reject(new Error(`Response error: ${response.status} ${response.statusText}`));
+        }
+      }).catch(error => reject(error));
+      
+      setTimeout(() => reject(new Error('API request timed out')), 10000);
     });
-    const responseDict = await response.json();
+
+    const responseDict = await responsePromise;
     
     let article = '';
     if (responseDict.choices && responseDict.choices.length > 0) {
