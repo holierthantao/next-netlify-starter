@@ -3,9 +3,13 @@ import cors from 'cors';
 
 console.log("generate-article opened"); 
 
-const corsMiddleware = cors({
-  origin: 'https://www.httnews.com'
-});
+const corsOptions = {
+  origin: 'https://www.httnews.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+const corsMiddleware = cors(corsOptions);
 
 export default async function handler(req, res)  {
   await corsMiddleware(req, res);
