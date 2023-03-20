@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       'Authorization': `Bearer ${apiKey}`
     };
     const data = {
-      'model': 'text-davinci-003',
+      'model': 'gpt-3.5-turbo',
       'prompt': prompt,
       'temperature': 0.2,
       'max_tokens': 1024,
