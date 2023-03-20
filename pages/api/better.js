@@ -15,6 +15,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     // Handle preflight requests
     corsHandler(req, res);
+    res.status(200).end();
     return;
   }
    console.log("Handler function called!"); 
