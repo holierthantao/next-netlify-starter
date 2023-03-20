@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const cors = require('cors');
 
 console.log("generate-article opened"); 
@@ -11,7 +10,7 @@ const corsOptions = {
 
 const corsMiddleware = cors(corsOptions);
 
-module.exports = async function(req, res) {
+module.exports = async (req, res) => {
   await corsMiddleware(req, res);
   
   console.log("Handler function called!"); 
@@ -54,4 +53,4 @@ module.exports = async function(req, res) {
     console.error(error);
     res.status(500).send('Server error');
   }
-}
+};
