@@ -72,7 +72,7 @@ const responsePromise = new Promise((resolve, reject) => {
     
     let article = '';
     if (responseDict.choices && responseDict.choices.length > 0) {
-      article = responseDict.choices[0].text;
+      article = responseDict.choices[0].message.content;;
     } else {
       console.log('Unexpected response format');
     }
