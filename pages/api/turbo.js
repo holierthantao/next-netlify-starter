@@ -42,7 +42,7 @@ const headers = {
   'Authorization': `Bearer ${apiKey}`
 };
 const data = {
-  'model': 'gpt-3.5-turbo-0301'',
+  'model': 'gpt-3.5-turbo-0301',
   'temperature': 0.2,
   'presence_penalty': 0.6,
   'frequency_penalty': 0.6,
